@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{48E66C6A-22EC-4360-BD7D-32B6F44B2121}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>EMS_Presentation_Layer</RootNamespace>
+    <AssemblyName>EMS-Presentation-Layer</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EMS-Business-Layer">
+      <HintPath>..\EMS-Business-Layer\bin\Debug\EMS-Business-Layer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adjustments\frmAdjustmentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adjustments\frmAdjustmentList.Designer.cs">
+      <DependentUpon>frmAdjustmentList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adjustments\frmListEmployeerAdjustment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adjustments\frmListEmployeerAdjustment.Designer.cs">
+      <DependentUpon>frmListEmployeerAdjustment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adjustments\frmLogAdjustment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adjustments\frmLogAdjustment.Designer.cs">
+      <DependentUpon>frmLogAdjustment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Attendance\frmAttendanceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Attendance\frmAttendanceList.Designer.cs">
+      <DependentUpon>frmAttendanceList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Attendance\LogAttendanceForEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Attendance\LogAttendanceForEmployee.Designer.cs">
+      <DependentUpon>LogAttendanceForEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\clsConstantVar.cs" />
+    <Compile Include="Classes\clsGlobal.cs" />
+    <Compile Include="Classes\clsUtils.cs" />
+    <Compile Include="Departments\frmDepartmentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Departments\frmDepartmentList.Designer.cs">
+      <DependentUpon>frmDepartmentList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employees\Controls\ctrlEmployeeCardWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Employees\Controls\ctrlEmployeeCardWithFilter.Designer.cs">
+      <DependentUpon>ctrlEmployeeCardWithFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employees\Controls\ctrlEmployeeInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Employees\Controls\ctrlEmployeeInfo.Designer.cs">
+      <DependentUpon>ctrlEmployeeInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employees\frmAddUpdateEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employees\frmAddUpdateEmployee.Designer.cs">
+      <DependentUpon>frmAddUpdateEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employees\frmEmployeeIinfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employees\frmEmployeeIinfo.Designer.cs">
+      <DependentUpon>frmEmployeeIinfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employees\frmEmployeesList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employees\frmEmployeesList.Designer.cs">
+      <DependentUpon>frmEmployeesList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employees\frmFindEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employees\frmFindEmployee.Designer.cs">
+      <DependentUpon>frmFindEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterviewAppointment\Controls\ctrlAppointmentCardInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InterviewAppointment\Controls\ctrlAppointmentCardInfo.Designer.cs">
+      <DependentUpon>ctrlAppointmentCardInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterviewAppointment\frmAddUpdateInterviewAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterviewAppointment\frmAddUpdateInterviewAppointment.Designer.cs">
+      <DependentUpon>frmAddUpdateInterviewAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterviewAppointment\frmAppointmentListforPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterviewAppointment\frmAppointmentListforPerson.Designer.cs">
+      <DependentUpon>frmAppointmentListforPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterviewAppointment\frmAppointmentListThismonth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterviewAppointment\frmAppointmentListThismonth.Designer.cs">
+      <DependentUpon>frmAppointmentListThismonth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interview\frmAddInterview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interview\frmAddInterview.Designer.cs">
+      <DependentUpon>frmAddInterview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interview\frmInterviewList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interview\frmInterviewList.Designer.cs">
+      <DependentUpon>frmInterviewList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interview\frmUpdateInterview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interview\frmUpdateInterview.Designer.cs">
+      <DependentUpon>frmUpdateInterview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobLevels\frmJobLevelList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobLevels\frmJobLevelList.Designer.cs">
+      <DependentUpon>frmJobLevelList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\Controls\ctrlPersonInfoCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="People\Controls\ctrlPersonInfoCard.Designer.cs">
+      <DependentUpon>ctrlPersonInfoCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\Controls\ctrlPesonCardWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="People\Controls\ctrlPesonCardWithFilter.Designer.cs">
+      <DependentUpon>ctrlPesonCardWithFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\frmAddUpdatePeople.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\frmAddUpdatePeople.Designer.cs">
+      <DependentUpon>frmAddUpdatePeople.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\frmFindPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\frmFindPerson.Designer.cs">
+      <DependentUpon>frmFindPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\frmPeopleList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\frmPeopleList.Designer.cs">
+      <DependentUpon>frmPeopleList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\frmPersonInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\frmPersonInfo.Designer.cs">
+      <DependentUpon>frmPersonInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalaryLog\frmPaySalaryForEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalaryLog\frmPaySalaryForEmployee.Designer.cs">
+      <DependentUpon>frmPaySalaryForEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalaryLog\frmSalaryLogList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalaryLog\frmSalaryLogList.Designer.cs">
+      <DependentUpon>frmSalaryLogList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Controls\ctrlUserCardInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\Controls\ctrlUserCardInfo.Designer.cs">
+      <DependentUpon>ctrlUserCardInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmAddUpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmAddUpdateUser.Designer.cs">
+      <DependentUpon>frmAddUpdateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmUserInfo.Designer.cs">
+      <DependentUpon>frmUserInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmUserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmUserList.Designer.cs">
+      <DependentUpon>frmUserList.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Adjustments\frmAdjustmentList.resx">
+      <DependentUpon>frmAdjustmentList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adjustments\frmListEmployeerAdjustment.resx">
+      <DependentUpon>frmListEmployeerAdjustment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adjustments\frmLogAdjustment.resx">
+      <DependentUpon>frmLogAdjustment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Attendance\frmAttendanceList.resx">
+      <DependentUpon>frmAttendanceList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Attendance\LogAttendanceForEmployee.resx">
+      <DependentUpon>LogAttendanceForEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Departments\frmDepartmentList.resx">
+      <DependentUpon>frmDepartmentList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employees\Controls\ctrlEmployeeCardWithFilter.resx">
+      <DependentUpon>ctrlEmployeeCardWithFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employees\Controls\ctrlEmployeeInfo.resx">
+      <DependentUpon>ctrlEmployeeInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employees\frmAddUpdateEmployee.resx">
+      <DependentUpon>frmAddUpdateEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employees\frmEmployeeIinfo.resx">
+      <DependentUpon>frmEmployeeIinfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employees\frmEmployeesList.resx">
+      <DependentUpon>frmEmployeesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employees\frmFindEmployee.resx">
+      <DependentUpon>frmFindEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterviewAppointment\Controls\ctrlAppointmentCardInfo.resx">
+      <DependentUpon>ctrlAppointmentCardInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterviewAppointment\frmAddUpdateInterviewAppointment.resx">
+      <DependentUpon>frmAddUpdateInterviewAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterviewAppointment\frmAppointmentListforPerson.resx">
+      <DependentUpon>frmAppointmentListforPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterviewAppointment\frmAppointmentListThismonth.resx">
+      <DependentUpon>frmAppointmentListThismonth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interview\frmAddInterview.resx">
+      <DependentUpon>frmAddInterview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interview\frmInterviewList.resx">
+      <DependentUpon>frmInterviewList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interview\frmUpdateInterview.resx">
+      <DependentUpon>frmUpdateInterview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobLevels\frmJobLevelList.resx">
+      <DependentUpon>frmJobLevelList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\Controls\ctrlPersonInfoCard.resx">
+      <DependentUpon>ctrlPersonInfoCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\Controls\ctrlPesonCardWithFilter.resx">
+      <DependentUpon>ctrlPesonCardWithFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\frmAddUpdatePeople.resx">
+      <DependentUpon>frmAddUpdatePeople.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\frmFindPerson.resx">
+      <DependentUpon>frmFindPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\frmPeopleList.resx">
+      <DependentUpon>frmPeopleList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\frmPersonInfo.resx">
+      <DependentUpon>frmPersonInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SalaryLog\frmPaySalaryForEmployee.resx">
+      <DependentUpon>frmPaySalaryForEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalaryLog\frmSalaryLogList.resx">
+      <DependentUpon>frmSalaryLogList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\Controls\ctrlUserCardInfo.resx">
+      <DependentUpon>ctrlUserCardInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmAddUpdateUser.resx">
+      <DependentUpon>frmAddUpdateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmUserInfo.resx">
+      <DependentUpon>frmUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmUserList.resx">
+      <DependentUpon>frmUserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MainMenuBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Women.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_1788890609391_edit_133000238687180.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1699296423778-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\discotools-xyz-icon_-_2024-08-28T132201.105.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1699296423778-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\discotools-xyz-icon_-_2024-08-28T132033.054.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\discotools-xyz-icon_33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\discotools-_2024-08-28T131945.897.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\discotools-xyz-icon_-_2024-08-28T131945.897.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\discotools-xyz-icon_36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Banner2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagegges.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Appointment2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Appointment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PersonInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddNew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Permission.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Employees.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Interview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salary2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ajustments.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Verfiy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CurrentUser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChangePassword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Appointment1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Interview2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salary1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salary11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adjustment1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogAdjustment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Department.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JobLevel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AttendanceList.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogAttendance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Verfiy1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EMS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Expire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Interview21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hire.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
