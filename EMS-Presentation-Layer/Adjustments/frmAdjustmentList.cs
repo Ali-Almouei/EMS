@@ -67,5 +67,13 @@ namespace EMS_Presentation_Layer.Adjustments
             sdf.ShowDialog();
             frmAdjustmentList_Load(null, null);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmLogAdjustment gsdy = new frmLogAdjustment();
+            gsdy.ShowDialog();
+            frmAdjustmentList_Load(null, null);
+
+        }
     }
 }

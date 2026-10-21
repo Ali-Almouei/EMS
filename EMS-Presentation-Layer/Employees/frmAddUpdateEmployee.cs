@@ -77,7 +77,7 @@ namespace EMS_Presentation_Layer.Employees
             _FillDataInComboBoxs();
             if (_Mode == enMode.AddNew)
             {
-                this.Text = "Add New User";
+                this.Text = "Add New Employee";
                 Employee = new clsEmployees();
                 tpEmployeeInfo.Enabled = false;
                 btnSave.Enabled = false;
